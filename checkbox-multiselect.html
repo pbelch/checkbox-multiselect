@@ -1,0 +1,33 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="checkbox-multiselect" >
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+        position: relative;
+      }
+    </style>
+    <template is="dom-repeat" items="[[listValues]]">
+      <input type="checkbox" id ="[[item.id]]" name="[[item.displayname]]" checked="[[item.selected]]" on-change="checkEvent">[[item.displayname]]<br/>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'checkbox-multiselect',
+      properties: {
+        listValues:{
+          type: Array,
+          notify: true,
+        }
+      },
+      checkEvent: function(e){
+        var impactedId = e.target.id;
+          for (var i=0; i< this.listValues.length; i ++) {
+             if (this.listValues[i].id === impactedId) {this.listValues[i].status = e.target.checked};
+          }
+      }
+    });
+  </script>
+</dom-module>

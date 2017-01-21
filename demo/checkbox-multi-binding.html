@@ -1,0 +1,29 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../checkbox-multiselect.html">
+
+<dom-module id="checkbox-multiselect-binding" >
+  <template>
+    <p><checkbox-multiselect list-values = '{{myValueList}}'></checkbox-multiselect></p>
+    <p><div id="contentOutput" style="border-style: solid;">Press 'Show Current Values' to see values</div><br/>
+    <paper-button raised on-tap="showvalues">Show Current Values</paper-button></p>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'checkbox-multiselect-binding',
+      properties: {
+        myValueList:{
+          type: Array,
+          notify: true,
+        }
+      },
+      attached: function () {
+        this.myValueList = [{"id":"1234","selected": "true", "displayname":"Test Object"}];
+      },
+      showvalues: function(){
+        document.getElementById("contentOutput").innerHTML = JSON.stringify(this.myValueList);
+      }
+    });
+  </script>
+</dom-module>
