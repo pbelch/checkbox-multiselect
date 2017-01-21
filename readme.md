@@ -5,13 +5,3 @@
 
 #Input
 -Expects input to contain array of objects: {id:<RETURNED ID>, name:<UI NAME>, selected:<true/false>} in list-values
-
-[
-{
-  id: XXXX
-  status: {
-    selected: true/false,
-    displayname: xxxxxx
-  }
-}
-]
