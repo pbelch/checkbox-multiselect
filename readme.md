@@ -17,4 +17,6 @@ selected attribute for each value
 
 #Versioning
 ### Version 1.0
-Coming soon!
+- Basic inline display of passed objects<br/>
+- Ability to pass in selected status<br/>
+- Return selected status <br/>
